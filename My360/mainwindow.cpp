@@ -64,7 +64,7 @@ void MainWindow::InitUi()
     topWdiget = new TopBaseWidget;
     layout = new QVBoxLayout;
     layout->addWidget(topWdiget,0);
-    layout->addStretch(1);
+    layout->addStretch(100);
     layout->setSpacing(0);
     layout->setMargin(0);
 

@@ -20,6 +20,7 @@ TopBaseWidget::TopBaseWidget(QWidget *parent) :
     loginLayout->addWidget(new QLabel(tr("登录360帐号")));
     loginLayout->addWidget(loginBtn);
     loginLayout->setSpacing(8);
+    loginLayout->setContentsMargins(0, 20, 10, 0);
 
     numberLayout->addWidget(number, 0);
     numberLayout->addStretch(10);
@@ -30,5 +31,6 @@ TopBaseWidget::TopBaseWidget(QWidget *parent) :
     layout->addStretch(10);
 
     layout->setSpacing(0);
+    layout->setMargin(0);
     setLayout(layout);
 }

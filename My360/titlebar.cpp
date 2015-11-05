@@ -58,7 +58,7 @@ void titleBar::UserLayoutInit()
     hlayout->setMargin(0);
     vlayout->addLayout(hlayout, 3);
     vlayout->setSpacing(0);
-    vlayout->setContentsMargins(0, 8, 0, 0);
+    vlayout->setContentsMargins(10, 10, 0, 0);
 
     layout->insertLayout(0, vlayout, 0);
     //layout->addLayout(vlayout, 0);
