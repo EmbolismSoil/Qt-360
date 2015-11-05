@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     basewidget.cpp \
     loginbutton.cpp \
     nunberwidget.cpp \
-    fontwidget.cpp
+    fontwidget.cpp \
+    bottomwidget.cpp
 
 HEADERS  += mainwindow.h \
     closebutton.h \
@@ -29,7 +30,8 @@ HEADERS  += mainwindow.h \
     basewidget.h \
     loginbutton.h \
     nunberwidget.h \
-    fontwidget.h
+    fontwidget.h \
+    bottomwidget.h
 
 FORMS    +=
 

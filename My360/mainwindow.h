@@ -39,7 +39,8 @@ private:
     QPoint windowPos;
     QPoint mousePos;
 
-    QPropertyAnimation *closeAnimation;
+    QPropertyAnimation *closeOpacityAnimation;
+    QPropertyAnimation *closemoveAnimation;
     QSystemTrayIcon *Tray;
     QRect WindowGeometry;
 };

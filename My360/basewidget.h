@@ -21,8 +21,10 @@ public slots:
 
 private:
     titleBar *title;
+    Button *examineBtn;
     LoginButton *loginBtn;
     NunberWidget *number;
+
 };
 
 #endif // BASEWIDGET_H

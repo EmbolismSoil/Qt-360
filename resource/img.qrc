@@ -151,5 +151,6 @@
         <file>tijian/正.png</file>
         <file>tijian/钟.png</file>
         <file>tijian/准.png</file>
+        <file>btn_examine_now.png</file>
     </qresource>
 </RCC>

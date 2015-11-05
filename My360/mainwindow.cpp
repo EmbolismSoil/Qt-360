@@ -6,6 +6,7 @@
 #include <QStateMachine>
 #include <QState>
 #include <QSignalTransition>
+#include <QEasingCurve>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -56,6 +57,9 @@ void MainWindow::InitUi()
 {
     setObjectName("Window");
     setStyleSheet("MainWindow{background-image:url(:/background/background_mainwnd.jpg) ;}");
+    setWindowTitle(tr("360安全卫士"));
+    setWindowIcon(QIcon(":/background/360logo.png"));
+
     Tray = new QSystemTrayIcon(this);
     Tray->setIcon(QIcon(":/background/360logo.png"));
     Tray->setToolTip("a trayicon example");//设置提示语
@@ -85,8 +89,14 @@ void MainWindow::InitUi()
 
 void MainWindow::InitConnect()
 {
-    closeAnimation = new QPropertyAnimation(this, "windowOpacity");
-    connect(closeAnimation, SIGNAL(finished()), this, SLOT(close()));
+    closeOpacityAnimation = new QPropertyAnimation(this, "windowOpacity");
+    closemoveAnimation = new QPropertyAnimation(this, "geometry");
+    closeOpacityAnimation->setDuration(1300);
+    closemoveAnimation->setDuration(1300);
+    closeOpacityAnimation->setEasingCurve(QEasingCurve::OutQuad);
+    closemoveAnimation->setEasingCurve(QEasingCurve::OutQuad);
+
+    connect(closeOpacityAnimation, SIGNAL(finished()), this, SLOT(close()));
     connect(topWdiget->getTitleBar()->getCloseBtn(), SIGNAL(clicked()), this, SLOT(unFix()));
 
 }
@@ -105,8 +115,7 @@ void MainWindow::InitAnimation()
      QSignalTransition *tran = start->addTransition(topWdiget->getTitleBar()->getCloseBtn(),
                                                     SIGNAL(clicked()),  end);
 
-     closeAnimation->setDuration(800);
-     tran->addAnimation(closeAnimation);
+     tran->addAnimation(closeOpacityAnimation);
 
      QStateMachine *moveMachine = new QStateMachine;
      QState *moveStart = new QState(moveMachine);
@@ -118,9 +127,7 @@ void MainWindow::InitAnimation()
       moveMachine->setInitialState(moveStart);
       QSignalTransition *moveTran = moveStart->addTransition(topWdiget->getTitleBar()->getCloseBtn(),
                                                              SIGNAL(clicked()),moveEnd);
-     QPropertyAnimation *moveAnimation = new QPropertyAnimation(this, "geometry");
-     moveAnimation->setDuration(800);
-     moveTran->addAnimation(moveAnimation);
+     moveTran->addAnimation(closemoveAnimation);
 
      closeMachine->start();
      moveMachine->start();
