@@ -161,5 +161,8 @@
         <file>security_safe_press.png</file>
         <file>shu_line.png</file>
         <file>guardline.png</file>
+        <file>clean.png</file>
+        <file>safe_check.png</file>
+        <file>youhua.png</file>
     </qresource>
 </RCC>

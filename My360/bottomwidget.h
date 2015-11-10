@@ -2,6 +2,8 @@
 #define BOTTOMWIDGET_H
 
 #include <QWidget>
+#include <closebutton.h>
+#include <QHBoxLayout>
 
 class bottomBaseWidget : public QWidget
 {
@@ -16,7 +18,10 @@ signals:
 
 public slots:
 private:
-    QPixmap *BackGround;
+    Button *optimizeBtn;
+    Button *safeCheckBtn;
+    Button *cleanBtn;
+    QHBoxLayout *layout;
 };
 
 #endif // BOTTOMWIDGET_H
