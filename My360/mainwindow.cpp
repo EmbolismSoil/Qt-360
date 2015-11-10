@@ -56,7 +56,8 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 void MainWindow::InitUi()
 {
     setObjectName("Window");
-    setStyleSheet("MainWindow{background-image:url(:/background/background_mainwnd.jpg) ;}");
+    //setStyleSheet("MainWindow{background-image:url(:/background/background_mainwnd.jpg) ;}");
+
     setWindowTitle(tr("360安全卫士"));
     setWindowIcon(QIcon(":/background/360logo.png"));
 
@@ -65,18 +66,7 @@ void MainWindow::InitUi()
     Tray->setToolTip("a trayicon example");//设置提示语
     Tray->show();
 
-    topWdiget = new TopBaseWidget;
-    layout = new QVBoxLayout;
-    layout->addWidget(topWdiget,0);
-    layout->addStretch(100);
-    layout->setSpacing(0);
-    layout->setMargin(0);
-
     center = new CenterWidget;
-    center->setLayout(layout);
-    layout->setSpacing(0);
-    layout->setMargin(0);
-    center->setLayout(layout);
     setCentralWidget(center);    
 
     this->setFixedSize(900, 600);
@@ -97,7 +87,7 @@ void MainWindow::InitConnect()
     closemoveAnimation->setEasingCurve(QEasingCurve::OutQuad);
 
     connect(closeOpacityAnimation, SIGNAL(finished()), this, SLOT(close()));
-    connect(topWdiget->getTitleBar()->getCloseBtn(), SIGNAL(clicked()), this, SLOT(unFix()));
+    connect(center, SIGNAL(closeBtnClicked()), this, SLOT(unFix()));
 
 }
 
@@ -112,8 +102,7 @@ void MainWindow::InitAnimation()
     end->assignProperty(this, "windowOpacity", 0);
 
     closeMachine->setInitialState(start);
-     QSignalTransition *tran = start->addTransition(topWdiget->getTitleBar()->getCloseBtn(),
-                                                    SIGNAL(clicked()),  end);
+     QSignalTransition *tran = start->addTransition(center, SIGNAL(closeBtnClicked()),  end);
 
      tran->addAnimation(closeOpacityAnimation);
 
@@ -125,8 +114,8 @@ void MainWindow::InitAnimation()
                                                            geometry().width() / 8, geometry().height() / 8));
 
       moveMachine->setInitialState(moveStart);
-      QSignalTransition *moveTran = moveStart->addTransition(topWdiget->getTitleBar()->getCloseBtn(),
-                                                             SIGNAL(clicked()),moveEnd);
+      QSignalTransition *moveTran = moveStart->addTransition(center,
+                                                             SIGNAL(closeBtnClicked()),moveEnd);
      moveTran->addAnimation(closemoveAnimation);
 
      closeMachine->start();

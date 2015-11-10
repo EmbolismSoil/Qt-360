@@ -27,8 +27,6 @@ protected:
     void mouseMoveEvent(QMouseEvent *);
 
 private:
-    TopBaseWidget *topWdiget;
-    QVBoxLayout *layout;
     CenterWidget *center;
 
     void InitUi();

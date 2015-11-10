@@ -19,9 +19,16 @@ signals:
 
 public slots:
 
+protected:
+    //virtual void paintEvent ( QPaintEvent * event);
+
 private:
     titleBar *title;
     Button *examineBtn;
+    Button *safeBtn;
+    Button *payinBtn;
+    Button *lineBtn;
+
     LoginButton *loginBtn;
     NunberWidget *number;
 

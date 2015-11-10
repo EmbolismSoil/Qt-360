@@ -152,5 +152,14 @@
         <file>tijian/钟.png</file>
         <file>tijian/准.png</file>
         <file>btn_examine_now.png</file>
+        <file>category_tab_background.png</file>
+        <file>payinsure_safe_hover.png</file>
+        <file>payinsure_safe_normal.png</file>
+        <file>payinsure_safe_press.png</file>
+        <file>security_safe_hover.png</file>
+        <file>security_safe_normal.png</file>
+        <file>security_safe_press.png</file>
+        <file>shu_line.png</file>
+        <file>guardline.png</file>
     </qresource>
 </RCC>
