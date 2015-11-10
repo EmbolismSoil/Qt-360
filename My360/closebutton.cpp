@@ -2,12 +2,13 @@
 #include <QPainter>
 #include <QPaintEvent>
 #include <QPixmap>
+#include <QLabel>
 
-
-Button::Button( QString FileName, int num , QWidget *parent, int ynum):
+Button::Button( QString FileName, int num , QWidget *parent, int ynum, QString bkGrnd):
     QPushButton(parent)
 {
     QPixmap pixmap(FileName);
+
     for (int cnt = 0; cnt < num; ++cnt){
         for (int y = 0; y < ynum; ++ y){
             pixmatpList.push_back( pixmap.copy(cnt * (pixmap.width() / num),  y * (pixmap.height() / ynum),
@@ -15,15 +16,27 @@ Button::Button( QString FileName, int num , QWidget *parent, int ynum):
         }
     }
 
+    if (bkGrnd != NULL){
+        background  = new QPixmap(bkGrnd);
+    }else{
+        background = NULL;
+    }
     setSizePolicy(QSizePolicy::Fixed	, QSizePolicy::Fixed	);
     //resize(pixmap.width() / num + 1, pixmap.height() + 1);
     curIndex = 0;
 }
 
-Button::Button(QVector<QString> &list, QWidget *parent):QPushButton(parent)
+Button::Button(QVector<QString> &list, QWidget *parent, QString bkGrnd):QPushButton(parent)
 {
+
     setPixmapList(list);
     setSizePolicy(QSizePolicy::Fixed	, QSizePolicy::Fixed	);
+
+    if (bkGrnd != NULL){
+        background  = new QPixmap(bkGrnd);
+    }else{
+        background = NULL;
+    }
     //resize(pixmap.width() / num + 1, pixmap.height() + 1);
     curIndex = 0;
 }
@@ -43,8 +56,6 @@ void Button::setPixmapList(QVector<QString> &list)
  void Button::paintEvent ( QPaintEvent * event)
  {
      QPainter painter(this);
-
-     QRect rect = event->rect();
      painter.drawPixmap(event->rect(), pixmatpList[curIndex]);
  }
 
@@ -54,12 +65,15 @@ void Button::setPixmapList(QVector<QString> &list)
         curIndex = 1;
     else curIndex = 0;
     update();
+
+    QPushButton::enterEvent(event);
  }
 
 void Button::leaveEvent(QEvent *event)
 {
     curIndex = 0;
     update();
+    QPushButton::leaveEvent(event);
 }
 
 void Button::mousePressEvent(QMouseEvent *event)
@@ -88,7 +102,8 @@ void Button::mouseReleaseEvent(QMouseEvent *event)
 
 QSize Button::sizeHint() const
 {
-    return QSize(pixmatpList[0].width(), pixmatpList[0].height());
+    return background != NULL? QSize(background->width(), background->height())  :
+                        QSize(pixmatpList[0].width(), pixmatpList[0].height());
 }
 
 

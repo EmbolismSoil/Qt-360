@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <closebutton.h>
 #include <QHBoxLayout>
+#include <buttonwithname.h>
 
 class bottomBaseWidget : public QWidget
 {
@@ -18,9 +19,17 @@ signals:
 
 public slots:
 private:
-    Button *optimizeBtn;
-    Button *safeCheckBtn;
-    Button *cleanBtn;
+    ButtonWithName *optimizeBtn;
+    ButtonWithName *safeCheckBtn;
+    ButtonWithName *cleanBtn;
+
+    ButtonWithName *softMngBtn;
+    ButtonWithName *humanSvrBtn;
+    ButtonWithName *mobileBtn;
+    ButtonWithName *speedBtn;
+    ButtonWithName *moreBtn;
+    Button *routerBtn;
+
     QHBoxLayout *layout;
 };
 

@@ -164,5 +164,11 @@
         <file>clean.png</file>
         <file>safe_check.png</file>
         <file>youhua.png</file>
+        <file>360JiShi_10_32.png</file>
+        <file>AdvanceTools_360MobileMgr_10_32.png</file>
+        <file>AdvanceTools_360SoftManger_10_32.png</file>
+        <file>AdvanceTools_NetSpeed_10_32.png</file>
+        <file>advtool_more.png</file>
+        <file>routerdefender.png</file>
     </qresource>
 </RCC>

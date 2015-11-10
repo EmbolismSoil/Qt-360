@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     loginbutton.cpp \
     nunberwidget.cpp \
     fontwidget.cpp \
-    bottomwidget.cpp
+    bottomwidget.cpp \
+    buttonwithname.cpp
 
 HEADERS  += mainwindow.h \
     closebutton.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     loginbutton.h \
     nunberwidget.h \
     fontwidget.h \
-    bottomwidget.h
+    bottomwidget.h \
+    buttonwithname.h
 
 FORMS    +=
 

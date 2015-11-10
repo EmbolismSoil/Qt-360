@@ -8,8 +8,8 @@ CenterWidget::CenterWidget(QWidget *parent) :
     bottomWidget = new bottomBaseWidget;
 
     layout = new QVBoxLayout;
-    layout->addWidget(topWidget,0);
-    layout->addWidget(bottomWidget, 0);
+    layout->addWidget(topWidget, 440);
+    layout->addWidget(bottomWidget, 160);
 
     layout->setSpacing(0);
     layout->setMargin(0);

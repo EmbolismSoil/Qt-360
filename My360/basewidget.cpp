@@ -12,6 +12,8 @@ TopBaseWidget::TopBaseWidget(QWidget *parent) :
 {
 
      setAutoFillBackground(true);
+     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+
      QPalette palette;
      palette.setBrush(this->backgroundRole(), QColor("#2ABF1D"));
      this->setPalette(palette);
