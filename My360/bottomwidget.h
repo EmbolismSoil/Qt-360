@@ -14,7 +14,7 @@ public:
 
 protected:
     //virtual void paintEvent ( QPaintEvent * event);
-    virtual QSize	sizeHint () const;
+    //virtual QSize	sizeHint () const;
 signals:
 
 public slots:

@@ -97,7 +97,3 @@ bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
     setLayout(layout);
 }
 
-QSize bottomBaseWidget::sizeHint() const
-{
-    return QSize(900, 160);
-}
