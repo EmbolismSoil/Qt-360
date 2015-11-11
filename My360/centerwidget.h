@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <basewidget.h>
 #include <bottomwidget.h>
+#include <QPair>
+#include <QList>
 
 class CenterWidget : public QWidget
 {
@@ -19,8 +21,11 @@ public slots:
 
 private:
     QVBoxLayout *layout;
-    TopBaseWidget *topWidget;
-     bottomBaseWidget  *bottomWidget;
+    //TopBaseWidget *topWidget;
+    // bottomBaseWidget  *bottomWidget;
+     QPair<TopBaseWidget *, bottomBaseWidget *> TopLayer;
+      QPair<TopBaseWidget *, bottomBaseWidget *>  LowerLayer;
+     QList<QPair<TopBaseWidget, bottomBaseWidget>  > MainFrame;
 };
 
 #endif // CENTERWIDGET_H
