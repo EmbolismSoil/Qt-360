@@ -14,11 +14,11 @@ class ButtonWithName : public QWidget
 public:
     ButtonWithName( QString FileName, int xnum  = 1,  QWidget *parent = 0, int ynum = 1, QString name = 0);
     ButtonWithName(QVector<QString> &list, QWidget *parent = 0, QString name = 0);
+    Button *getButton(void){return Btn;}
 
     void SetBackGround(QString path, int xnum, int ynum);
     void setSpacing(int space){ layout->setSpacing(space); }
     void setFontSize(int size){  font->setPointSize(size); nameLabel->setFont(*font);}
-
 signals:
 
 public slots:

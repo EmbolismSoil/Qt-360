@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include <QDesktopWidget>
 #include <QMouseEvent>
 #include <QHBoxLayout>
@@ -7,6 +6,7 @@
 #include <QState>
 #include <QSignalTransition>
 #include <QEasingCurve>
+#include <QApplication>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {

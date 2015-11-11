@@ -11,7 +11,7 @@ class bottomBaseWidget : public QWidget
     Q_OBJECT
 public:
     explicit bottomBaseWidget(QWidget *parent = 0);
-
+     ButtonWithName *getOptimizeBtn(void){return optimizeBtn;}
 protected:
     //virtual void paintEvent ( QPaintEvent * event);
     //virtual QSize	sizeHint () const;
@@ -31,6 +31,8 @@ private:
     Button *routerBtn;
 
     QHBoxLayout *layout;
+
+    void InitUi(void);
 };
 
 #endif // BOTTOMWIDGET_H

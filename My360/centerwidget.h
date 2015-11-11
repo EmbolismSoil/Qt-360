@@ -18,14 +18,12 @@ signals:
 
 public slots:
     void closeClicked();
-
 private:
     QVBoxLayout *layout;
-    //TopBaseWidget *topWidget;
-    // bottomBaseWidget  *bottomWidget;
-     QPair<TopBaseWidget *, bottomBaseWidget *> TopLayer;
-      QPair<TopBaseWidget *, bottomBaseWidget *>  LowerLayer;
-     QList<QPair<TopBaseWidget, bottomBaseWidget>  > MainFrame;
+    TopBaseWidget *topWidget;
+     bottomBaseWidget  *bottomWidget;
+
+     void InitAnimation(void);
 };
 
 #endif // CENTERWIDGET_H

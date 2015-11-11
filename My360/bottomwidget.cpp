@@ -7,6 +7,11 @@
 bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
     QWidget(parent)
 {
+    InitUi();
+}
+
+void bottomBaseWidget::InitUi()
+{
     setAutoFillBackground(true);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
