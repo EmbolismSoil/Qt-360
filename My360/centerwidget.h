@@ -24,6 +24,7 @@ private:
      bottomBaseWidget  *bottomWidget;
 
      void InitAnimation(void);
+     void InitUi(void);
 };
 
 #endif // CENTERWIDGET_H

@@ -44,7 +44,6 @@ private:
     LoginButton *loginBtn;
     NunberWidget *number;
     QPixmap *backGround;
-    QPointF AnimationPos;
 
     QPropertyAnimation *outAnimation;
     QPropertyAnimation *inAnimation;
@@ -53,6 +52,7 @@ private:
     QParallelAnimationGroup *inGroup;
     QParallelAnimationGroup *outGroup;
 
+    QPointF AnimationPos;
     QGraphicsOpacityEffect *Effect;
     qreal Opacity;
 

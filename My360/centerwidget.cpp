@@ -9,25 +9,7 @@
 CenterWidget::CenterWidget(QWidget *parent) :
     QWidget(parent)
 {
-    topWidget = new TopBaseWidget(this);
-    bottomWidget = new bottomBaseWidget(this);
-
-    topWidget->resize(900, 440);
-    bottomWidget->resize(900, 160);
-    bottomWidget->move(0, 440);
-    //layout = new QVBoxLayout;
-    //layout->addWidget(topWidget, 440);
-    //layout->addWidget(bottomWidget, 160);
-
-    //layout->setSpacing(0);
-    //layout->setMargin(0);
-
-   // setLayout(layout);
-
-    connect(bottomWidget->getOptimizeBtn()->getButton(), SIGNAL(clicked()),
-            topWidget, SLOT(startAnimation()));
-    connect(topWidget->getTitleBar()->getCloseBtn(),
-            SIGNAL(clicked()), this, SLOT(closeClicked()));
+    InitUi();
 }
 
 void CenterWidget::closeClicked()
@@ -55,4 +37,21 @@ void CenterWidget::InitAnimation()
     trans->addAnimation(topMoveAnimation);
 
     topMoveMach->start();
+}
+
+void CenterWidget::InitUi()
+{
+    topWidget = new TopBaseWidget(this);
+    bottomWidget = new bottomBaseWidget(this);
+
+    topWidget->resize(900, 440);
+    bottomWidget->resize(900, 160);
+    bottomWidget->move(0, 440);
+
+    connect(bottomWidget->getOptimizeBtn()->getButton(), SIGNAL(clicked()),
+            topWidget, SLOT(startAnimation()));
+    connect(bottomWidget->getOptimizeBtn()->getButton(), SIGNAL(clicked()),
+            bottomWidget, SLOT(startAnimation()));
+    connect(topWidget->getTitleBar()->getCloseBtn(),
+            SIGNAL(clicked()), this, SLOT(closeClicked()));
 }

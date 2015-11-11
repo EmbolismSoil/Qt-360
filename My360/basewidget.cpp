@@ -20,13 +20,9 @@ void TopBaseWidget::startAnimation()
 {
     if (m_isOut){
       inGroup->start();
-        //  inAnimation->start();
-        //inOpacityAnimation->start();
          m_isOut = false;
     }else{
         outGroup->start();
-        //outAnimation->start();
-     //   outOpacityAnimation->start();
         m_isOut = true;
     }
 }
@@ -73,7 +69,6 @@ void TopBaseWidget::IinitAnimatio()
     inGroup->addAnimation(inOpacityAnimation);
     outGroup->addAnimation(outAnimation);
     outGroup->addAnimation(outOpacityAnimation);
-
 }
 
 void TopBaseWidget::IinitUi()
