@@ -83,6 +83,18 @@ void TopBaseWidget::IinitUi()
     this->setPalette(palette);
 
    title = new titleBar(this);
+   Button* logo = new Button(":/background/360logo.png", 1, title);
+   Button* updateBtn = new Button(":/background/update_btn.png", 4 , title);
+   QLabel* text = new QLabel(tr("360安全管家 10.0 Beta"), title);
+
+   QHBoxLayout *hlayout = new QHBoxLayout;
+    hlayout->addWidget(logo, 0);
+    hlayout->addWidget(text, 0);
+    hlayout->addWidget(updateBtn, 0);
+    hlayout->setSpacing(6);
+    hlayout->setContentsMargins(0, 10, 0, 0);
+    title->InsertUserLayout(hlayout, 0, 0);
+
    loginBtn = new LoginButton(":/background/head_bkg.png", 2, this);
 
    QVBoxLayout *layout = new QVBoxLayout;
@@ -114,6 +126,7 @@ void TopBaseWidget::IinitUi()
    labelLayout->addWidget(labelMin, 0, Qt::AlignHCenter);
    labelLayout->addStretch(10);
    labelLayout->setSpacing(10);
+   labelLayout->setMargin(0);
 
    number = new NunberWidget(this);
    number->setNum(85);
