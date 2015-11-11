@@ -20,7 +20,7 @@ signals:
 public slots:
 
 protected:
-    //virtual void paintEvent ( QPaintEvent * event);
+    virtual void paintEvent ( QPaintEvent * event);
 
 private:
     titleBar *title;
@@ -31,6 +31,7 @@ private:
 
     LoginButton *loginBtn;
     NunberWidget *number;
+    QPixmap *backGround;
 
 };
 

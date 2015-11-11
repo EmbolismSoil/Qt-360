@@ -14,6 +14,8 @@ TopBaseWidget::TopBaseWidget(QWidget *parent) :
      setAutoFillBackground(true);
      setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
+     backGround = new QPixmap(":/background/wenli.png");
+
      QPalette palette;
      palette.setBrush(this->backgroundRole(), QColor("#2ABF1D"));
      this->setPalette(palette);
@@ -101,6 +103,14 @@ TopBaseWidget::TopBaseWidget(QWidget *parent) :
     layout->setSpacing(0);
     layout->setMargin(0);
     setLayout(layout);
+}
+
+void TopBaseWidget::paintEvent(QPaintEvent *event)
+{
+    QWidget::paintEvent(event);
+
+    QPainter painter(this);
+     painter.drawPixmap(event->rect(), *backGround);
 }
 
 

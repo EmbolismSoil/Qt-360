@@ -172,5 +172,6 @@
         <file>routerdefender.png</file>
         <file>short_cut_bkg.png</file>
         <file>my_tool_bk.png</file>
+        <file>wenli.png</file>
     </qresource>
 </RCC>
