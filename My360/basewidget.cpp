@@ -92,7 +92,7 @@ void TopBaseWidget::IinitUi()
     hlayout->addWidget(text, 0);
     hlayout->addWidget(updateBtn, 0);
     hlayout->setSpacing(6);
-    hlayout->setContentsMargins(0, 10, 0, 0);
+    hlayout->setContentsMargins(10, 10, 0, 0);
     title->InsertUserLayout(hlayout, 0, 0);
 
    loginBtn = new LoginButton(":/background/head_bkg.png", 2, this);
@@ -160,7 +160,7 @@ void TopBaseWidget::IinitUi()
    payinLayout->addWidget(payinBtn);
    payinLayout->addWidget(lineBtn);
    payinLayout->setSpacing(5);
-   setContentsMargins (25, 0, 0, 0);
+   payinLayout->setContentsMargins (25, 0, 0, 0);
 
    safeBtnLayout->addLayout(payinLayout, 0);
    safeBtnLayout->addWidget(safeBtn,0);
