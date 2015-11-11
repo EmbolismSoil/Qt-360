@@ -37,6 +37,12 @@ bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
     mobileBtn->setFontSize(9);
     speedBtn->setFontSize(9);
 
+    softMngBtn->SetBackGround(":/background/short_cut_bkg.png", 3, 1);
+    humanSvrBtn->SetBackGround(":/background/short_cut_bkg.png", 3, 1);
+    mobileBtn->SetBackGround(":/background/short_cut_bkg.png", 3, 1);
+    speedBtn->SetBackGround(":/background/short_cut_bkg.png", 3, 1);
+
+
     QFont ft;
     QLabel *moreLabel = new QLabel(tr("更多"), this);
     QVBoxLayout *moreLayout = new QVBoxLayout;
@@ -77,12 +83,12 @@ bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
     advtoolLayout->addWidget(mobileBtn, 0, Qt::AlignBottom);
     advtoolLayout->addWidget(speedBtn, 0, Qt::AlignBottom);
     advtoolLayout->addLayout(moreLayout, 0);
-    advtoolLayout->setSpacing(45);
+    advtoolLayout->setSpacing(5);
     advtoolLayout->setMargin(0);
 
     QVBoxLayout *toolLayout  = new QVBoxLayout;
     toolLayout->addLayout(routerLayout, 0);
-    toolLayout->addStretch(10);
+    toolLayout->addStretch(15);
     toolLayout->addLayout(advtoolLayout, 0);
     toolLayout->setSpacing(0);
     toolLayout->setContentsMargins(0, 10, 0, 5);

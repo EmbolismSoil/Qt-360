@@ -170,5 +170,7 @@
         <file>AdvanceTools_NetSpeed_10_32.png</file>
         <file>advtool_more.png</file>
         <file>routerdefender.png</file>
+        <file>short_cut_bkg.png</file>
+        <file>my_tool_bk.png</file>
     </qresource>
 </RCC>
