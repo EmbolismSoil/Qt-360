@@ -19,6 +19,8 @@ signals:
 
 public slots:
 
+protected:
+
 private:
     QLabel *nameLabel;
     Button *Btn;

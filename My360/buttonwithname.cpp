@@ -1,6 +1,6 @@
 #include "buttonwithname.h"
 #include <QVBoxLayout>
-
+#include <QDebug>
 
 ButtonWithName::ButtonWithName(QString FileName, int xnum, QWidget *parent, int ynum, QString name):
    QWidget(parent)
@@ -22,3 +22,4 @@ ButtonWithName::ButtonWithName(QString FileName, int xnum, QWidget *parent, int 
         layout->setSpacing(0);
         setLayout(layout);
 }
+
