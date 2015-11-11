@@ -140,7 +140,7 @@ void TopBaseWidget::IinitUi()
    numberLayout->addWidget(number, 0);
    numberLayout->addLayout(labelLayout, 0);
    numberLayout->addStretch(10);
-   numberLayout->setMargin(0);
+   numberLayout->setContentsMargins(10, 0, 0 , 0);
    numberLayout->setSpacing(15);
 
    QVector<QString> payinPathVec;
