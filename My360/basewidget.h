@@ -27,6 +27,8 @@ public:
     qreal getOpacity(void){return  Effect->opacity();}
     void setOpacity(qreal opc){Effect->setOpacity(opc);}
 
+    QPropertyAnimation *InAnimation(void){return inAnimation;}
+    QPropertyAnimation *OutAnimation(void){return outAnimation;}
 signals:
 
 public slots:

@@ -25,9 +25,9 @@ void bottomBaseWidget::startAnimation()
 
 void bottomBaseWidget::InitUi()
 {
-    setAutoFillBackground(true);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
+    setAutoFillBackground(true);
     QPalette palette;
     palette.setBrush(this->backgroundRole(), QColor(255,255,255));
     this->setPalette(palette);
@@ -128,13 +128,13 @@ void bottomBaseWidget::InitAnimation()
         this->setGraphicsEffect(Effect);
 
         outAnimation = new QPropertyAnimation(this, "AnimationPos");
-        outAnimation->setStartValue(QPointF(0, 440));
-        outAnimation->setEndValue(QPointF(0, 600));
+        outAnimation->setStartValue(QPoint(0, 440));
+        outAnimation->setEndValue(QPoint(0, 600));
         outAnimation->setDuration(200);
 
         inAnimation = new QPropertyAnimation(this, "AnimationPos");
-        inAnimation->setStartValue(QPointF(0, 600));
-        inAnimation->setEndValue(QPointF(0, 440));
+        inAnimation->setStartValue(QPoint(0, 600));
+        inAnimation->setEndValue(QPoint(0, 440));
         inAnimation->setDuration(200);
 
 

@@ -9,7 +9,7 @@
 #include <QPropertyAnimation>
 
 TopBaseWidget::TopBaseWidget(QWidget *parent) :
-    QWidget(parent), m_isOut(false)
+    QWidget(parent), m_isOut(false), backGround(NULL)
 {
     IinitUi();
     IinitAnimatio();
@@ -31,8 +31,10 @@ void TopBaseWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
 
-    QPainter painter(this);
-    painter.drawPixmap(event->rect(), *backGround);
+    if (backGround != NULL){
+        QPainter painter(this);
+        painter.drawPixmap(event->rect(), *backGround);
+    }
 }
 
 void TopBaseWidget::IinitAnimatio()
@@ -73,11 +75,11 @@ void TopBaseWidget::IinitAnimatio()
 
 void TopBaseWidget::IinitUi()
 {
-    setAutoFillBackground(true);
     //setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    backGround = new QPixmap(":/background/wenli.png");
+  //  backGround = new QPixmap(":/background/wenli.png");
 
+    setAutoFillBackground(true);
     QPalette palette;
     palette.setBrush(this->backgroundRole(), QColor("#2ABF1D"));
     this->setPalette(palette);

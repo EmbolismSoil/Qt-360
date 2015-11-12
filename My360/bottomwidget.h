@@ -8,23 +8,26 @@
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
 #include <QParallelAnimationGroup>
+#include <QDebug>
 
 class bottomBaseWidget : public QWidget
 {
     Q_OBJECT
 
-    Q_PROPERTY(QPointF AnimationPos READ getAnimationPos WRITE setAnimationPos)
+    Q_PROPERTY(QPoint AnimationPos READ getAnimationPos WRITE setAnimationPos)
     Q_PROPERTY(qreal Opacity READ getOpacity WRITE setOpacity)
 
 public:
     explicit bottomBaseWidget(QWidget *parent = 0);
      ButtonWithName *getOptimizeBtn(void){return optimizeBtn;}
+     ButtonWithName *getSafeBtn(void){return safeCheckBtn;}
+     ButtonWithName *getCleanBtn(void){return cleanBtn;}
 
-     void setAnimationPos(const QPointF &a){AnimationPos = a; this->move(a.x(), a.y());}
-     QPointF getAnimationPos(void){return AnimationPos;}
+     void setAnimationPos(const QPoint &a){AnimationPos = a; this->move(a.x(), a.y());}
+     QPoint getAnimationPos(void){return AnimationPos;}
 
      qreal getOpacity(void){return  Effect->opacity();}
-     void setOpacity(qreal opc){Effect->setOpacity(opc);}
+     void setOpacity(qreal opc){Effect->setOpacity(opc); }
 
 protected:
     //virtual void paintEvent ( QPaintEvent * event);
@@ -54,7 +57,7 @@ private:
     QParallelAnimationGroup *inGroup;
     QParallelAnimationGroup *outGroup;
 
-    QPointF AnimationPos;
+    QPoint AnimationPos;
     QGraphicsOpacityEffect *Effect;
     qreal Opacity;
     bool m_isOut;

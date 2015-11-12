@@ -17,7 +17,13 @@ HEADERS += basewidget.h \
            loginbutton.h \
            mainwindow.h \
            nunberwidget.h \
-           titlebar.h
+           titlebar.h \
+    lowertopwidget.h \
+    lowerbottomwidget.h \
+    abslowercenterwidget.h \
+    optimizecenterwidget.h \
+    safecheckcenterwidget.h \
+    cleancenterwidget.h
 FORMS +=
 SOURCES += basewidget.cpp \
            bottomwidget.cpp \
@@ -29,7 +35,13 @@ SOURCES += basewidget.cpp \
            main.cpp \
            mainwindow.cpp \
            nunberwidget.cpp \
-           titlebar.cpp
+           titlebar.cpp \
+    lowertopwidget.cpp \
+    lowerbottomwidget.cpp \
+    abslowercenterwidget.cpp \
+    optimizecenterwidget.cpp \
+    safecheckcenterwidget.cpp \
+    cleancenterwidget.cpp
 
 RESOURCES += \
     ../resource/img.qrc
