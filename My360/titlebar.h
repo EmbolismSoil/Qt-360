@@ -13,8 +13,14 @@ public:
     explicit titleBar(QWidget *parent = 0);
     Button *getCloseBtn() const {return closeBtn;}
     Button *getMinimizeBtn() const {return minimizeBtn;}
+    void InsertUserLayout(QLayout *UserLayout, int pos, int stretch);
+    void InsertUserWidget(QWidget *widget, int index, int stretch = 0, Qt::Alignment alignment = 0)
+    {
+        layout->insertWidget(index, widget, stretch, alignment);
+    }
+
 protected:
-    virtual void UserLayoutInit(void);
+    //virtual void UserLayoutInit(void);
 
 private:
     Button *closeBtn;
@@ -22,8 +28,6 @@ private:
     Button *menuBtn;
     Button *skinBtn;
     Button *videoBtn;
-    Button *logo;
-    Button *updateBtn;
 
    // QGridLayout *layout;
     QHBoxLayout* layout;

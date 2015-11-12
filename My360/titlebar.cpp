@@ -9,17 +9,19 @@ titleBar::titleBar(QWidget *parent) :
     menuBtn = new Button(":/background/Menu.png", 4, this);
     skinBtn = new Button(":/background/Skin.png", 4, this);
     videoBtn = new Button(":/background/playvideo.png", 4, this);
-    logo = new Button(":/background/360logo.png", 1, this);
-    updateBtn = new Button(":/background/update_btn.png", 4 , this);
-    layout = new QHBoxLayout;
 
     WidgetLayoutInit();
-    UserLayoutInit();
-    setLayout(layout);
+}
+
+void titleBar::InsertUserLayout(QLayout *UserLayout, int pos, int stretch)
+{
+    layout->insertLayout(pos, UserLayout, stretch);
 }
 
 void titleBar::WidgetLayoutInit()
 {
+    layout = new QHBoxLayout;
+
      QVBoxLayout *Toolvlayout = new QVBoxLayout;
      QHBoxLayout *Toolhlayout  = new QHBoxLayout;
 
@@ -41,11 +43,17 @@ void titleBar::WidgetLayoutInit()
     layout->addLayout(Toolvlayout, 0);
 
     layout->setSpacing(0);
-    layout->setMargin(0);
+    //layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
+    setLayout(layout);
 }
 
+#if 0
 void titleBar::UserLayoutInit()
 {
+    logo = new Button(":/background/360logo.png", 1, this);
+    updateBtn = new Button(":/background/update_btn.png", 4 , this);
+
     QLabel* text = new QLabel(tr("360安全管家 10.0 Beta"));
     QHBoxLayout *hlayout = new QHBoxLayout;
     QVBoxLayout *vlayout = new QVBoxLayout;
@@ -63,3 +71,4 @@ void titleBar::UserLayoutInit()
     layout->insertLayout(0, vlayout, 0);
     //layout->addLayout(vlayout, 0);
 }
+#endif

@@ -6,6 +6,9 @@
 #include <bottomwidget.h>
 #include <QPair>
 #include <QList>
+#include <optimizecenterwidget.h>
+#include <safecheckcenterwidget.h>
+#include <cleancenterwidget.h>
 
 class CenterWidget : public QWidget
 {
@@ -18,14 +21,19 @@ signals:
 
 public slots:
     void closeClicked();
-
+    void startAnimation();
 private:
     QVBoxLayout *layout;
-    //TopBaseWidget *topWidget;
-    // bottomBaseWidget  *bottomWidget;
-     QPair<TopBaseWidget *, bottomBaseWidget *> TopLayer;
-      QPair<TopBaseWidget *, bottomBaseWidget *>  LowerLayer;
-     QList<QPair<TopBaseWidget, bottomBaseWidget>  > MainFrame;
+    TopBaseWidget *topWidget;
+     bottomBaseWidget  *bottomWidget;
+
+    OptimizeCenterWidget *lowerOptimizeCenter;
+    SafeCheckCenterWidget *lowerSafeCenter;
+    CleanCenterWidget *lowerCleanWidget;
+
+    void InitAnimation(void);
+     void InitUi(void);
+     void InitConnect(void);
 };
 
 #endif // CENTERWIDGET_H

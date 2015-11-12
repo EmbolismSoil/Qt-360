@@ -5,11 +5,29 @@
 #include <buttonwithname.h>
 
 bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent), m_isOut(false)
 {
-    setAutoFillBackground(true);
+    InitUi();
+    InitAnimation();
+    InitConnect();
+}
+
+void bottomBaseWidget::startAnimation()
+{
+    if (m_isOut){
+      inGroup->start();
+         m_isOut = false;
+    }else{
+        outGroup->start();
+        m_isOut = true;
+    }
+}
+
+void bottomBaseWidget::InitUi()
+{
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
+    setAutoFillBackground(true);
     QPalette palette;
     palette.setBrush(this->backgroundRole(), QColor(255,255,255));
     this->setPalette(palette);
@@ -101,5 +119,47 @@ bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
     layout->addLayout(toolLayout, 0);
 
     setLayout(layout);
+}
+
+void bottomBaseWidget::InitAnimation()
+{
+        Effect = new QGraphicsOpacityEffect;
+        Effect->setOpacity(1);
+        this->setGraphicsEffect(Effect);
+
+        outAnimation = new QPropertyAnimation(this, "AnimationPos");
+        outAnimation->setStartValue(QPoint(0, 440));
+        outAnimation->setEndValue(QPoint(0, 600));
+        outAnimation->setDuration(200);
+
+        inAnimation = new QPropertyAnimation(this, "AnimationPos");
+        inAnimation->setStartValue(QPoint(0, 600));
+        inAnimation->setEndValue(QPoint(0, 440));
+        inAnimation->setDuration(200);
+
+
+        outOpacityAnimation = new QPropertyAnimation(this, "Opacity");
+        outOpacityAnimation->setStartValue(1);
+        outOpacityAnimation->setEndValue(0);
+        outOpacityAnimation->setDuration(200);
+
+        inOpacityAnimation = new QPropertyAnimation(this, "Opacity");
+        inOpacityAnimation->setStartValue(0);
+        inOpacityAnimation->setEndValue(1);
+        inOpacityAnimation->setDuration(200);
+
+        inGroup = new QParallelAnimationGroup;
+        outGroup = new QParallelAnimationGroup;
+
+        inGroup->addAnimation(inAnimation);
+        inGroup->addAnimation(inOpacityAnimation);
+        outGroup->addAnimation(outAnimation);
+        outGroup->addAnimation(outOpacityAnimation);
+}
+
+void bottomBaseWidget::InitConnect()
+{
+    connect(inAnimation, SIGNAL(valueChanged(QVariant)), this, SLOT(update()));
+    connect(outAnimation, SIGNAL(valueChanged(QVariant)), this, SLOT(update()));
 }
 

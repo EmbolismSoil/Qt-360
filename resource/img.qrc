@@ -173,5 +173,13 @@
         <file>short_cut_bkg.png</file>
         <file>my_tool_bk.png</file>
         <file>wenli.png</file>
+        <file>return.png</file>
+        <file>speed.png</file>
+        <file>btn_start_scan.png</file>
+        <file>speedlogo.png</file>
+        <file>safelogo.png</file>
+        <file>start_btn.png</file>
+        <file>cleanlogo.png</file>
+        <file>btn_top_scan.png</file>
     </qresource>
 </RCC>
