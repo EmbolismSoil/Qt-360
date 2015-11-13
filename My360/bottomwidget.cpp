@@ -130,23 +130,23 @@ void bottomBaseWidget::InitAnimation()
         outAnimation = new QPropertyAnimation(this, "AnimationPos");
         outAnimation->setStartValue(QPoint(0, 440));
         outAnimation->setEndValue(QPoint(0, 600));
-        outAnimation->setDuration(200);
+        outAnimation->setDuration(400);
 
         inAnimation = new QPropertyAnimation(this, "AnimationPos");
         inAnimation->setStartValue(QPoint(0, 600));
         inAnimation->setEndValue(QPoint(0, 440));
-        inAnimation->setDuration(200);
+        inAnimation->setDuration(400);
 
 
         outOpacityAnimation = new QPropertyAnimation(this, "Opacity");
         outOpacityAnimation->setStartValue(1);
         outOpacityAnimation->setEndValue(0);
-        outOpacityAnimation->setDuration(200);
+        outOpacityAnimation->setDuration(400);
 
         inOpacityAnimation = new QPropertyAnimation(this, "Opacity");
         inOpacityAnimation->setStartValue(0);
         inOpacityAnimation->setEndValue(1);
-        inOpacityAnimation->setDuration(200);
+        inOpacityAnimation->setDuration(400);
 
         inGroup = new QParallelAnimationGroup;
         outGroup = new QParallelAnimationGroup;
