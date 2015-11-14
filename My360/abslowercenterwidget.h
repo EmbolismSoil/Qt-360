@@ -12,6 +12,7 @@ class AbsLowerCenterWidget : public QWidget
 public:
     explicit AbsLowerCenterWidget(QWidget *parent = 0);
     LowerTopWidget *getTopWidget(void){return TopWidget;}
+    LowerBottomWidget *getBottomWidget(void){return BottomWidget;}
 signals:
 
 public slots:

@@ -1,6 +1,7 @@
 #include "safecheckcenterwidget.h"
 #include <lowertopwidget.h>
 #include <lowerbottomwidget.h>
+#include <lowersafecheckbutton.h>
 
 SafeCheckCenterWidget::SafeCheckCenterWidget(QWidget *parent):
 AbsLowerCenterWidget(parent)
@@ -14,7 +15,7 @@ void SafeCheckCenterWidget::InitUi()
                                    ":/background/start_btn.png",4, 1,tr("安全扫描"),
                                    tr("谢谢使用"), this);
 
-    BottomWidget = new LowerBottomWidget(this);
+    BottomWidget = LowerBottomWidget::factory(LowerBottomWidget::safe, this);
 
     layout = new QVBoxLayout;
     layout->addWidget(TopWidget, 150);
