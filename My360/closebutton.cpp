@@ -3,6 +3,7 @@
 #include <QPaintEvent>
 #include <QPixmap>
 #include <QLabel>
+#include <QDebug>
 
 Button::Button( QString FileName, int num , QWidget *parent, int ynum, QString bkGrnd):
     QPushButton(parent)

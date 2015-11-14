@@ -5,6 +5,8 @@
 #include <closebutton.h>
 #include <QWidget>
 #include <QPropertyAnimation>
+#include <QTimeLine>
+#include <QTimer>
 
 class lowerSafeCheckButton : public Button
 {
@@ -15,15 +17,15 @@ public:
 protected:
     virtual void paintEvent ( QPaintEvent * event);
     virtual void enterEvent(QEvent *event);
+    virtual void mousePressEvent ( QMouseEvent * event ) ;
 
 public slots:
-    void AnimationEnd(){curPixmap = getPixmapList();}
-
+    void Animation(){ curPixmap = getPixmapList(); curIndex = 1; update();}
 private:
     QList<QPixmap>  pixmapAnimation;
     QList<QPixmap>   *curPixmap;
+    QPropertyAnimation *animation;
 
-    QPropertyAnimation *hoverAnimation;
     void InitAnimation();
     void InitConnect();
 };

@@ -15,6 +15,9 @@ public:
         Layout->insertLayout(pos, layout, stretch);
     }
 
+    void setSpacing(int spac){Layout->setSpacing(0);}
+    void addStretch(int s){Layout->addStretch(s);}
+
     static LowerBottomWidget* factory(widgetT Type, QWidget * = 0);
 signals:
 

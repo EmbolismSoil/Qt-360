@@ -1,6 +1,10 @@
 #include "lowersafecheckbutton.h"
 #include <QPainter>
 #include <QPaintEvent>
+#include <QTimeLine>
+#include <QTimer>
+#include <QDebug>
+#include <QMouseEvent>
 
 lowerSafeCheckButton::lowerSafeCheckButton(QString path,
                                            QString AnimationPath, QWidget *parent):
@@ -19,26 +23,39 @@ lowerSafeCheckButton::lowerSafeCheckButton(QString path,
 void lowerSafeCheckButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    painter.drawPixmap(event->rect(), (*curPixmap)[curIndex]);
+
+    if (curPixmap->size() > curIndex)
+        painter.drawPixmap(event->rect(), (*curPixmap)[curIndex]);
 }
 
 void lowerSafeCheckButton::enterEvent(QEvent *event)
 {
     curPixmap = &pixmapAnimation;
-    hoverAnimation->start();
+    animation->start();
 }
+
+void lowerSafeCheckButton::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton){
+        animation->stop();
+        curPixmap = getPixmapList();
+     }
+
+    Button::mousePressEvent(event);
+}
+
 
 void lowerSafeCheckButton::InitAnimation()
 {
-    hoverAnimation = new QPropertyAnimation(this, "curIndex");
-    hoverAnimation->setStartValue(0);
-    hoverAnimation->setEndValue(7);
-    hoverAnimation->setDuration(500);
+    animation = new QPropertyAnimation(this, "curIndex");
+    animation->setStartValue(0);
+    animation->setEndValue(6);
+    animation->setDuration(600);
 }
 
 void lowerSafeCheckButton::InitConnect()
 {
-    connect(hoverAnimation, SIGNAL(finished()), this,  SLOT(AnimationEnd()));
+    connect(animation, SIGNAL(finished()), this,  SLOT(Animation()));
 }
 
 

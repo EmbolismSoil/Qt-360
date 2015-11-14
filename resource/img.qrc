@@ -198,5 +198,7 @@
         <file>scan_button_custom_hover.png</file>
         <file>scan_button_full_hover.png</file>
         <file>scan_button_quick_hover.png</file>
+        <file>system_fix.png</file>
+        <file>system_patch.png</file>
     </qresource>
 </RCC>
