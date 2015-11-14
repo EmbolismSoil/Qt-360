@@ -23,7 +23,8 @@ HEADERS += basewidget.h \
     abslowercenterwidget.h \
     optimizecenterwidget.h \
     safecheckcenterwidget.h \
-    cleancenterwidget.h
+    cleancenterwidget.h \
+    lowerspeedbutton.h
 FORMS +=
 SOURCES += basewidget.cpp \
            bottomwidget.cpp \
@@ -41,7 +42,8 @@ SOURCES += basewidget.cpp \
     abslowercenterwidget.cpp \
     optimizecenterwidget.cpp \
     safecheckcenterwidget.cpp \
-    cleancenterwidget.cpp
+    cleancenterwidget.cpp \
+    lowerspeedbutton.cpp
 
 RESOURCES += \
     ../resource/img.qrc

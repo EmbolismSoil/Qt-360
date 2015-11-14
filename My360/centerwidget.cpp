@@ -91,6 +91,13 @@ void CenterWidget::InitConnect()
             lowerSafeCenter->getTopWidget(), SLOT(update()));
     connect(topWidget->OutAnimation(), SIGNAL(valueChanged(QVariant)),
             lowerCleanWidget->getTopWidget(), SLOT(update()));
+    connect(topWidget->OutAnimation(), SIGNAL(valueChanged(QVariant)),
+            lowerOptimizeCenter->getBottomWidget(), SLOT(update()));
+    connect(topWidget->OutAnimation(), SIGNAL(valueChanged(QVariant)),
+            lowerSafeCenter->getBottomWidget(), SLOT(update()));
+    connect(topWidget->OutAnimation(), SIGNAL(valueChanged(QVariant)),
+            lowerCleanWidget->getBottomWidget(), SLOT(update()));
+
 
     connect(lowerOptimizeCenter->getTopWidget()->TitleBtn(),
             SIGNAL(clicked()), this, SLOT(startAnimation()));

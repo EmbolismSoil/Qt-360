@@ -8,11 +8,14 @@ class LowerBottomWidget : public QWidget
 {
     Q_OBJECT
 public:
+    typedef enum{speed,  safe, clean}widgetT;
     explicit LowerBottomWidget(QWidget *parent = 0);
-    void InsertLayout(QBoxLayout *layout, int pos, int stretch)
+    void InsertLayout(QBoxLayout *layout, int pos = 0, int stretch = 0)
     {
         Layout->insertLayout(pos, layout, stretch);
     }
+
+    static LowerBottomWidget* factory(widgetT Type, QWidget * = 0);
 signals:
 
 public slots:
