@@ -191,5 +191,6 @@
         <file>sys_uncheck.png</file>
         <file>cat_gray_hover.png</file>
         <file>cat_hover.png</file>
+        <file>cat_checkbox.png</file>
     </qresource>
 </RCC>

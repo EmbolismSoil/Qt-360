@@ -29,15 +29,31 @@ lowerSpeedButton *lowerSpeedButton::factory(int index, QWidget *parent)
            QPixmap bgpixmap(":/background/cat_hover.png");
            QPixmap grayfg(":/background/start_uncheck.png");
            QPixmap graybg(":/background/cat_gray_hover.png");
+            QPixmap ckpixmap(":/background/cat_checkbox.png");
 
+           QVector<QPixmap> CKPixmap;
+
+           for (int cnt = 0; cnt < 12; cnt ++)
+               CKPixmap.push_back(ckpixmap.copy(cnt * ckpixmap.width() / 12, 0,
+                                                ckpixmap.width() / 12, ckpixmap.height()));
+
+           int x = fgpixmap.width() - CKPixmap[0].width() - 14;
+           int y = fgpixmap.height() - CKPixmap[0].height() - 14;
+
+           QPainter normalPainter(&fgpixmap);
+           normalPainter.drawPixmap(x, y, CKPixmap[4]);
             colorpixmap.push_back(fgpixmap);
             QPainter painter(&bgpixmap);
             painter.drawPixmap(0, 0, fgpixmap);
+            painter.drawPixmap(x, y, CKPixmap[5]);
             colorpixmap.push_back(bgpixmap);
 
+            QPainter graynormalPainter(&grayfg);
+            graynormalPainter.drawPixmap(x, y, CKPixmap[0]);
             graypixmap.push_back(grayfg);
             QPainter grayPainter(&graybg);
             grayPainter.drawPixmap(0, 0, grayfg);
+            grayPainter.drawPixmap(x, y, CKPixmap[1]);
             graypixmap.push_back(graybg);
 
             return new lowerSpeedButton(colorpixmap, graypixmap, parent);
@@ -46,15 +62,31 @@ lowerSpeedButton *lowerSpeedButton::factory(int index, QWidget *parent)
         QPixmap bgpixmap(":/background/cat_hover.png");
         QPixmap grayfg(":/background/sys_uncheck.png");
         QPixmap graybg(":/background/cat_gray_hover.png");
+         QPixmap ckpixmap(":/background/cat_checkbox.png");
 
+        QVector<QPixmap> CKPixmap;
+
+        for (int cnt = 0; cnt < 12; cnt ++)
+            CKPixmap.push_back(ckpixmap.copy(cnt * ckpixmap.width() / 12, 0,
+                                             ckpixmap.width() / 12, ckpixmap.height()));
+
+        int x = fgpixmap.width() - CKPixmap[0].width() - 14;
+        int y = fgpixmap.height() - CKPixmap[0].height() - 14;
+
+        QPainter normalPainter(&fgpixmap);
+        normalPainter.drawPixmap(x, y, CKPixmap[4]);
          colorpixmap.push_back(fgpixmap);
          QPainter painter(&bgpixmap);
          painter.drawPixmap(0, 0, fgpixmap);
+         painter.drawPixmap(x, y, CKPixmap[5]);
          colorpixmap.push_back(bgpixmap);
 
+         QPainter graynormalPainter(&grayfg);
+         graynormalPainter.drawPixmap(x, y, CKPixmap[0]);
          graypixmap.push_back(grayfg);
          QPainter grayPainter(&graybg);
          grayPainter.drawPixmap(0, 0, grayfg);
+         grayPainter.drawPixmap(x, y, CKPixmap[1]);
          graypixmap.push_back(graybg);
 
          return new lowerSpeedButton(colorpixmap, graypixmap, parent);
@@ -63,15 +95,31 @@ lowerSpeedButton *lowerSpeedButton::factory(int index, QWidget *parent)
         QPixmap bgpixmap(":/background/cat_hover.png");
         QPixmap grayfg(":/background/net_uncheck.png");
         QPixmap graybg(":/background/cat_gray_hover.png");
+         QPixmap ckpixmap(":/background/cat_checkbox.png");
 
+        QVector<QPixmap> CKPixmap;
+
+        for (int cnt = 0; cnt < 12; cnt ++)
+            CKPixmap.push_back(ckpixmap.copy(cnt * ckpixmap.width() / 12, 0,
+                                             ckpixmap.width() / 12, ckpixmap.height()));
+
+        int x = fgpixmap.width() - CKPixmap[0].width() - 14;
+        int y = fgpixmap.height() - CKPixmap[0].height() - 14;
+
+        QPainter normalPainter(&fgpixmap);
+        normalPainter.drawPixmap(x, y, CKPixmap[4]);
          colorpixmap.push_back(fgpixmap);
          QPainter painter(&bgpixmap);
          painter.drawPixmap(0, 0, fgpixmap);
+         painter.drawPixmap(x, y, CKPixmap[5]);
          colorpixmap.push_back(bgpixmap);
 
+         QPainter graynormalPainter(&grayfg);
+         graynormalPainter.drawPixmap(x, y, CKPixmap[0]);
          graypixmap.push_back(grayfg);
          QPainter grayPainter(&graybg);
          grayPainter.drawPixmap(0, 0, grayfg);
+         grayPainter.drawPixmap(x, y, CKPixmap[1]);
          graypixmap.push_back(graybg);
 
          return new lowerSpeedButton(colorpixmap, graypixmap, parent);
@@ -80,15 +128,31 @@ lowerSpeedButton *lowerSpeedButton::factory(int index, QWidget *parent)
         QPixmap bgpixmap(":/background/cat_hover.png");
         QPixmap grayfg(":/background/disk_uncheck.png");
         QPixmap graybg(":/background/cat_gray_hover.png");
+         QPixmap ckpixmap(":/background/cat_checkbox.png");
 
+        QVector<QPixmap> CKPixmap;
+
+        for (int cnt = 0; cnt < 12; cnt ++)
+            CKPixmap.push_back(ckpixmap.copy(cnt * ckpixmap.width() / 12, 0,
+                                             ckpixmap.width() / 12, ckpixmap.height()));
+
+        int x = fgpixmap.width() - CKPixmap[0].width() - 14;
+        int y = fgpixmap.height() - CKPixmap[0].height() - 14;
+
+        QPainter normalPainter(&fgpixmap);
+        normalPainter.drawPixmap(x, y, CKPixmap[4]);
          colorpixmap.push_back(fgpixmap);
          QPainter painter(&bgpixmap);
          painter.drawPixmap(0, 0, fgpixmap);
+         painter.drawPixmap(x, y, CKPixmap[5]);
          colorpixmap.push_back(bgpixmap);
 
+         QPainter graynormalPainter(&grayfg);
+         graynormalPainter.drawPixmap(x, y, CKPixmap[0]);
          graypixmap.push_back(grayfg);
          QPainter grayPainter(&graybg);
          grayPainter.drawPixmap(0, 0, grayfg);
+         grayPainter.drawPixmap(x, y, CKPixmap[1]);
          graypixmap.push_back(graybg);
 
          return new lowerSpeedButton(colorpixmap, graypixmap, parent);
