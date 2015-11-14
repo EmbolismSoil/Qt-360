@@ -34,6 +34,13 @@ void lowerSafeCheckButton::enterEvent(QEvent *event)
     animation->start();
 }
 
+void lowerSafeCheckButton::leaveEvent(QEvent *event)
+{
+    animation->stop();
+    curPixmap = getPixmapList();
+    Button::leaveEvent(event);
+}
+
 void lowerSafeCheckButton::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton){

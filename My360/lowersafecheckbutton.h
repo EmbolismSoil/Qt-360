@@ -17,6 +17,7 @@ public:
 protected:
     virtual void paintEvent ( QPaintEvent * event);
     virtual void enterEvent(QEvent *event);
+    virtual void leaveEvent ( QEvent * event );
     virtual void mousePressEvent ( QMouseEvent * event ) ;
 
 public slots:
