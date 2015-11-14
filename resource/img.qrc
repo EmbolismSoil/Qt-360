@@ -192,5 +192,11 @@
         <file>cat_gray_hover.png</file>
         <file>cat_hover.png</file>
         <file>cat_checkbox.png</file>
+        <file>scan_button_custom.png</file>
+        <file>scan_button_full.png</file>
+        <file>scan_button_quick.png</file>
+        <file>scan_button_custom_hover.png</file>
+        <file>scan_button_full_hover.png</file>
+        <file>scan_button_quick_hover.png</file>
     </qresource>
 </RCC>
