@@ -12,12 +12,10 @@
 #include <tr1/memory>
 
 
-<<<<<<< HEAD
 class QStateMachine;
 class QState;
 class QSignalTransition;
-=======
->>>>>>> overloadNew
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
