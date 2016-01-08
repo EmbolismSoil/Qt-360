@@ -11,6 +11,7 @@ class AbsLowerCenterWidget : public QWidget
     Q_OBJECT
 public:
     explicit AbsLowerCenterWidget(QWidget *parent = 0);
+    virtual ~AbsLowerCenterWidget();
     LowerTopWidget *getTopWidget(void){return TopWidget;}
     LowerBottomWidget *getBottomWidget(void){return BottomWidget;}
 signals:

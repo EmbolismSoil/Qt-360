@@ -21,6 +21,11 @@ lowerSafeCheckButton::lowerSafeCheckButton(QString path,
     InitConnect();
 }
 
+lowerSafeCheckButton::~lowerSafeCheckButton()
+{
+    delete  animation;
+}
+
 void lowerSafeCheckButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);

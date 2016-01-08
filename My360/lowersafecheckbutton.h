@@ -13,7 +13,7 @@ class lowerSafeCheckButton : public Button
     Q_OBJECT
 public:
     lowerSafeCheckButton(QString path, QString AnimationPath, QWidget* = 0);
-
+    virtual ~lowerSafeCheckButton();
 protected:
     virtual void paintEvent ( QPaintEvent * event);
     virtual void enterEvent(QEvent *event);

@@ -12,6 +12,27 @@ bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
     InitConnect();
 }
 
+bottomBaseWidget::~bottomBaseWidget()
+{
+    delete optimizeBtn;
+    delete safeCheckBtn;
+    delete cleanBtn;
+    delete softMngBtn;
+    delete humanSvrBtn;
+    delete mobileBtn;
+    delete speedBtn;
+    delete moreBtn;
+    delete routerBtn;
+    delete layout;
+    delete outAnimation;
+    delete inAnimation;
+    delete outOpacityAnimation;
+    delete inOpacityAnimation;
+    delete inGroup;
+    delete outGroup;
+    delete Effect;
+}
+
 void bottomBaseWidget::startAnimation()
 {
     if (m_isOut){

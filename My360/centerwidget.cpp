@@ -18,6 +18,24 @@ CenterWidget::CenterWidget(QWidget *parent) :
     InitConnect();
 }
 
+CenterWidget::~CenterWidget()
+{
+    //delete layout;
+    delete topWidget;
+    delete  bottomWidget;
+    delete lowerOptimizeCenter;
+    delete lowerSafeCenter;
+    delete lowerCleanWidget;
+
+#if 0
+    delete topMoveMach ;
+    delete topMoveStart;
+    delete topMoveEnd;
+    delete trans ;
+    delete topMoveAnimation;
+#endif
+}
+
 void CenterWidget::closeClicked()
 {
     emit closeBtnClicked();
@@ -32,19 +50,19 @@ void CenterWidget::startAnimation()
 
 void CenterWidget::InitAnimation()
 {
-    QStateMachine *topMoveMach = new QStateMachine(topWidget);
-    QState *topMoveStart = new QState(topMoveMach);
-    QState *topMoveEnd = new QState(topMoveMach);
+    topMoveMach = new QStateMachine(topWidget);
+    topMoveStart = new QState(topMoveMach);
+    topMoveEnd = new QState(topMoveMach);
 
     topMoveStart->assignProperty(topWidget, "AnimationPos",
                                  QPointF(0, 0));
     topMoveEnd->assignProperty(topWidget, "AnimationPos", QPointF(100, 100));
 
     topMoveMach->setInitialState(topMoveStart);
-    QSignalTransition *trans =
+    trans =
             topMoveStart->addTransition(bottomWidget->getOptimizeBtn()->getButton(),
                                         SIGNAL(clicked()), topMoveEnd);
-    QPropertyAnimation *topMoveAnimation = new QPropertyAnimation(topWidget, "AnimationPos");
+    topMoveAnimation = new QPropertyAnimation(topWidget, "AnimationPos");
     topMoveAnimation->setDuration(1000);
     trans->addAnimation(topMoveAnimation);
 

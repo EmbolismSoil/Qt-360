@@ -12,6 +12,7 @@ class NunberWidget : public QWidget
     Q_OBJECT
 public:
     explicit NunberWidget(QWidget *parent = 0);
+    virtual ~NunberWidget();
     void setNum(int num);
 private:
     QList<int> index;

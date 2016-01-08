@@ -16,6 +16,27 @@ TopBaseWidget::TopBaseWidget(QWidget *parent) :
     InitConnect();
 }
 
+TopBaseWidget::~TopBaseWidget()
+{
+    delete title;
+    delete examineBtn;
+    delete safeBtn;
+    delete payinBtn;
+    delete lineBtn;
+
+    delete loginBtn;
+    delete number;
+    delete backGround;
+
+    delete outAnimation;
+    delete inAnimation;
+     delete outOpacityAnimation;
+    delete inOpacityAnimation;
+    delete inGroup;
+    delete outGroup;
+    delete Effect;
+}
+
 void TopBaseWidget::startAnimation()
 {
     if (m_isOut){

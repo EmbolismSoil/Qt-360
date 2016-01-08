@@ -8,6 +8,13 @@ AbsLowerCenterWidget::AbsLowerCenterWidget(QWidget *parent) :
 {
 }
 
+AbsLowerCenterWidget::~AbsLowerCenterWidget()
+{
+    delete layout;
+    delete BottomWidget;
+    delete TopWidget;
+}
+
 #if 0
 void AbsLowerCenterWidget::init(AbsLowerCenterWidget *LowerCenter)
 {

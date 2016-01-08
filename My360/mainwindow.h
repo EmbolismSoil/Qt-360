@@ -9,14 +9,19 @@
 #include <QSystemTrayIcon>
 #include <centerwidget.h>
 #include <basewidget.h>
+#include <tr1/memory>
 
+
+class QStateMachine;
+class QState;
+class QSignalTransition;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    virtual ~MainWindow();
 
 public slots:
     void unFix();
@@ -27,7 +32,7 @@ protected:
     void mouseMoveEvent(QMouseEvent *);
 
 private:
-    CenterWidget *center;
+    CenterWidget* center;
 
     void InitUi();
     void InitConnect();
@@ -37,10 +42,19 @@ private:
     QPoint windowPos;
     QPoint mousePos;
 
-    QPropertyAnimation *closeOpacityAnimation;
-    QPropertyAnimation *closemoveAnimation;
-    QSystemTrayIcon *Tray;
+    QPropertyAnimation*  closeOpacityAnimation;
+     QPropertyAnimation* closemoveAnimation;
+     QSystemTrayIcon* Tray;
     QRect WindowGeometry;
+
+    QStateMachine *closeMachine;
+    QState *start;
+    QState *end;
+    QSignalTransition *tran ;
+    QStateMachine *moveMachine ;
+    QState *moveStart;
+    QState *moveEnd  ;
+     QSignalTransition *moveTran;
 };
 
 #endif // MAINWINDOW_H

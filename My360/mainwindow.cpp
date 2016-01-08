@@ -8,7 +8,11 @@
 #include <QEasingCurve>
 #include <QApplication>
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
+    center(new CenterWidget),
+    closeOpacityAnimation (new QPropertyAnimation(this, "windowOpacity")),
+    closemoveAnimation(new QPropertyAnimation(this, "geometry")),
+    Tray(new QSystemTrayIcon(this))
 {
    setWindowFlags(Qt::FramelessWindowHint);
     setAutoFillBackground(true);
@@ -20,7 +24,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 MainWindow::~MainWindow()
 {
+    delete center;
+    delete  closeOpacityAnimation;
+     delete closemoveAnimation;
+     delete Tray;
 
+    delete closeMachine;
+    //delete start;
+    //delete end;
+    //delete tran ;
+    delete moveMachine ;
+    //delete moveStart;
+    //delete moveEnd  ;
+    //delete moveTran;
 }
 
 void MainWindow::unFix()
@@ -61,13 +77,11 @@ void MainWindow::InitUi()
     setWindowTitle(tr("360安全卫士"));
     setWindowIcon(QIcon(":/background/360logo.png"));
 
-    Tray = new QSystemTrayIcon(this);
     Tray->setIcon(QIcon(":/background/360logo.png"));
     Tray->setToolTip("a trayicon example");//设置提示语
     Tray->show();
 
-    center = new CenterWidget;
-    setCentralWidget(center);    
+    setCentralWidget(&(*center));
 
     this->setFixedSize(900, 600);
     QDesktopWidget *deskdop = QApplication::desktop();
@@ -79,44 +93,42 @@ void MainWindow::InitUi()
 
 void MainWindow::InitConnect()
 {
-    closeOpacityAnimation = new QPropertyAnimation(this, "windowOpacity");
-    closemoveAnimation = new QPropertyAnimation(this, "geometry");
     closeOpacityAnimation->setDuration(1300);
     closemoveAnimation->setDuration(1300);
     closeOpacityAnimation->setEasingCurve(QEasingCurve::OutQuad);
     closemoveAnimation->setEasingCurve(QEasingCurve::OutQuad);
 
-    connect(closeOpacityAnimation, SIGNAL(finished()), this, SLOT(close()));
-    connect(center, SIGNAL(closeBtnClicked()), this, SLOT(unFix()));
+    connect(&(*closeOpacityAnimation), SIGNAL(finished()), this, SLOT(close()));
+    connect(&(*center), SIGNAL(closeBtnClicked()), this, SLOT(unFix()));
 
 }
 
 void MainWindow::InitAnimation()
 {
-    QStateMachine *closeMachine = new QStateMachine;
+    closeMachine = new QStateMachine;
 
-    QState *start = new QState(closeMachine);
-    QState *end = new QState(closeMachine);
+    start = new QState(closeMachine);
+    end = new QState(closeMachine);
 
     start->assignProperty(this, "windowOpacity", 1);
     end->assignProperty(this, "windowOpacity", 0);
 
     closeMachine->setInitialState(start);
-     QSignalTransition *tran = start->addTransition(center, SIGNAL(closeBtnClicked()),  end);
+     tran = start->addTransition(&(*center), SIGNAL(closeBtnClicked()),  end);
 
-     tran->addAnimation(closeOpacityAnimation);
+     tran->addAnimation(&(*closeOpacityAnimation));
 
-     QStateMachine *moveMachine = new QStateMachine;
-     QState *moveStart = new QState(moveMachine);
-     QState *moveEnd  = new QState(moveMachine);
+     moveMachine = new QStateMachine;
+     moveStart = new QState(moveMachine);
+     moveEnd  = new QState(moveMachine);
       moveStart->assignProperty(this, "geometry", geometry());
       moveEnd->assignProperty(this, "geometry", QRectF(geometry().x() / 8, geometry().y() / 8,
                                                            geometry().width() / 8, geometry().height() / 8));
 
       moveMachine->setInitialState(moveStart);
-      QSignalTransition *moveTran = moveStart->addTransition(center,
+      moveTran = moveStart->addTransition(&(*center),
                                                              SIGNAL(closeBtnClicked()),moveEnd);
-     moveTran->addAnimation(closemoveAnimation);
+     moveTran->addAnimation(&(*closemoveAnimation));
 
      closeMachine->start();
      moveMachine->start();

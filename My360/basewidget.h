@@ -17,6 +17,7 @@ class TopBaseWidget : public QWidget
 
 public:
     explicit TopBaseWidget(QWidget *parent = 0);
+    virtual ~TopBaseWidget();
 
     titleBar *getTitleBar(void){return title;}
     typedef  enum {MoveUp, MoveDonw, MoveLeft, MoveRight}MoveDirection;
@@ -53,11 +54,10 @@ private:
     QPropertyAnimation *inOpacityAnimation;
     QParallelAnimationGroup *inGroup;
     QParallelAnimationGroup *outGroup;
+    QGraphicsOpacityEffect *Effect;
 
     QPointF AnimationPos;
-    QGraphicsOpacityEffect *Effect;
     qreal Opacity;
-
     bool m_isOut;
     void IinitAnimatio(void);
     void IinitUi(void);

@@ -5,25 +5,23 @@
 #include <common.h>
 
 ButtonWithName::ButtonWithName(QString FileName, int xnum, QWidget *parent, int ynum, QString name):
-   QWidget(parent), m_isEnter(false)
+   QWidget(parent),
+   nameLabel (new QLabel(name, this)),
+   Btn(new Button(FileName, xnum, this, ynum)),
+   font(new QFont),
+    layout(new QVBoxLayout),
+     m_isEnter(false)
 {
-
-       Btn = new Button(FileName, xnum, this, ynum);
-
-        layout = new QVBoxLayout;
-        layout->addWidget(Btn, 0,  Qt::AlignHCenter);
-
+        layout->addWidget(&(*Btn), 0,  Qt::AlignHCenter);
         if (name != 0){
-            nameLabel = new QLabel(name, this);
-            font = new QFont;
             font->setPointSize(11);
             nameLabel->setFont(*font);
-            layout->addWidget(nameLabel, 0, Qt::AlignHCenter);
+            layout->addWidget(&(*nameLabel), 0, Qt::AlignHCenter);
         }
 
         layout->setSpacing(0);
         layout->setContentsMargins(0, 9, 0, 0);
-        setLayout(layout);
+        setLayout(&(*layout));
 }
 
 void ButtonWithName::SetBackGround(QString path, int xnum, int ynum)

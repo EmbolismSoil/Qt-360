@@ -10,12 +10,16 @@
 #include <safecheckcenterwidget.h>
 #include <cleancenterwidget.h>
 
+class QStateMachine;
+class QState;
+class QSignalTransition;
+
 class CenterWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit CenterWidget(QWidget *parent = 0);
-
+    virtual ~CenterWidget();
 signals:
     void closeBtnClicked();
 
@@ -23,13 +27,19 @@ public slots:
     void closeClicked();
     void startAnimation();
 private:
-    QVBoxLayout *layout;
+    //QVBoxLayout *layout;
     TopBaseWidget *topWidget;
      bottomBaseWidget  *bottomWidget;
 
     OptimizeCenterWidget *lowerOptimizeCenter;
     SafeCheckCenterWidget *lowerSafeCenter;
     CleanCenterWidget *lowerCleanWidget;
+
+    QStateMachine *topMoveMach ;
+    QState *topMoveStart;
+    QState *topMoveEnd;
+    QSignalTransition *trans ;
+   QPropertyAnimation *topMoveAnimation;
 
     void InitAnimation(void);
      void InitUi(void);

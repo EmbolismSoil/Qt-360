@@ -19,6 +19,8 @@ class bottomBaseWidget : public QWidget
 
 public:
     explicit bottomBaseWidget(QWidget *parent = 0);
+    virtual ~bottomBaseWidget();
+
      ButtonWithName *getOptimizeBtn(void){return optimizeBtn;}
      ButtonWithName *getSafeBtn(void){return safeCheckBtn;}
      ButtonWithName *getCleanBtn(void){return cleanBtn;}
@@ -56,9 +58,9 @@ private:
     QPropertyAnimation *inOpacityAnimation;
     QParallelAnimationGroup *inGroup;
     QParallelAnimationGroup *outGroup;
+    QGraphicsOpacityEffect *Effect;
 
     QPoint AnimationPos;
-    QGraphicsOpacityEffect *Effect;
     qreal Opacity;
     bool m_isOut;
 

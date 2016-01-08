@@ -15,6 +15,11 @@ NunberWidget::NunberWidget(QWidget *parent) :
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 }
 
+NunberWidget::~NunberWidget()
+{
+    delete background;
+}
+
 void NunberWidget::setNum(int num)
 {
         num > 99 ? num = 99 : num ;

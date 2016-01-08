@@ -11,6 +11,11 @@ LoginButton::LoginButton(QString FileName, int num , QWidget *parent ):
     background = new QPixmap(":/background/def_head.png");
 }
 
+LoginButton::~LoginButton()
+{
+    delete background;
+}
+
 void LoginButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
