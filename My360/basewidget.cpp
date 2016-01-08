@@ -9,7 +9,7 @@
 #include <QPropertyAnimation>
 
 TopBaseWidget::TopBaseWidget(QWidget *parent) :
-    QWidget(parent), m_isOut(false), backGround(NULL)
+    QWidget(parent),  backGround(NULL), m_isOut(false)
 {
     IinitUi();
     IinitAnimatio();

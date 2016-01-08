@@ -2,6 +2,7 @@
 #include <QVBoxLayout>
 #include <QPainter>
 #include <QPaintEvent>
+#include <common.h>
 
 ButtonWithName::ButtonWithName(QString FileName, int xnum, QWidget *parent, int ynum, QString name):
    QWidget(parent), m_isEnter(false)
@@ -49,12 +50,14 @@ void ButtonWithName::paintEvent(QPaintEvent *event)
 }
 void ButtonWithName::enterEvent(QEvent *event)
 {
+  __UNUSED(event);
     m_isEnter = true;
     update();
 }
 
 void ButtonWithName::leaveEvent(QEvent *event)
 {
+    __UNUSED(event);
     m_isEnter = false;
     update();
 }

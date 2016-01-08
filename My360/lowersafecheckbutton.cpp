@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QDebug>
 #include <QMouseEvent>
+#include <common.h>
 
 lowerSafeCheckButton::lowerSafeCheckButton(QString path,
                                            QString AnimationPath, QWidget *parent):
@@ -30,6 +31,7 @@ void lowerSafeCheckButton::paintEvent(QPaintEvent *event)
 
 void lowerSafeCheckButton::enterEvent(QEvent *event)
 {
+    __UNUSED(event);
     curPixmap = &pixmapAnimation;
     animation->start();
 }

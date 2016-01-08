@@ -25,7 +25,8 @@ HEADERS += basewidget.h \
     safecheckcenterwidget.h \
     cleancenterwidget.h \
     lowerspeedbutton.h \
-    lowersafecheckbutton.h
+    lowersafecheckbutton.h \
+    common.h
 FORMS +=
 SOURCES += basewidget.cpp \
            bottomwidget.cpp \
