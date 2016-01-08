@@ -4,6 +4,8 @@
 #include <QPixmap>
 #include <QLabel>
 #include <QDebug>
+#include "overloadNew.h"
+
 
 Button::Button( QString FileName, int num , QWidget *parent, int ynum, QString bkGrnd):
     QPushButton(parent)

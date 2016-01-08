@@ -1,6 +1,8 @@
 #include "cleancenterwidget.h"
 #include <lowertopwidget.h>
 #include <lowerbottomwidget.h>
+#include "overloadNew.h"
+
 
 CleanCenterWidget::CleanCenterWidget(QWidget *parent):
     AbsLowerCenterWidget(parent)

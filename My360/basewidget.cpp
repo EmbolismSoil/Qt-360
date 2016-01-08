@@ -7,6 +7,8 @@
 #include <QPainter>
 #include <QPaintEvent>
 #include <QPropertyAnimation>
+#include "overloadNew.h"
+
 
 TopBaseWidget::TopBaseWidget(QWidget *parent) :
     QWidget(parent),  backGround(NULL), m_isOut(false)

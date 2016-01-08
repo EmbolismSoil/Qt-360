@@ -1,5 +1,6 @@
 #include "titlebar.h"
 #include <QLabel>
+#include "overloadNew.h"
 
 titleBar::titleBar(QWidget *parent) :
     QWidget(parent)

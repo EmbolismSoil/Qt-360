@@ -3,6 +3,7 @@
 #include <QPaintEvent>
 #include <QLabel>
 #include <buttonwithname.h>
+#include "overloadNew.h"
 
 bottomBaseWidget::bottomBaseWidget( QWidget *parent) :
     QWidget(parent), m_isOut(false)

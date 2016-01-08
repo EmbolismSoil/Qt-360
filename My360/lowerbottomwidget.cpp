@@ -8,6 +8,9 @@
 #include <buttonwithname.h>
 #include <QHBoxLayout>
 
+#include "overloadNew.h"
+
+
 LowerBottomWidget::LowerBottomWidget(QWidget *parent) :
     QWidget(parent)
 {

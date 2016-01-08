@@ -1,4 +1,5 @@
 #include "lowertopwidget.h"
+#include "overloadNew.h"
 
 #if 0
 LowerTopWidget::LowerTopWidget(QWidget *parent) :

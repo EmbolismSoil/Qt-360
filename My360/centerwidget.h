@@ -10,6 +10,7 @@
 #include <safecheckcenterwidget.h>
 #include <cleancenterwidget.h>
 
+
 class CenterWidget : public QWidget
 {
     Q_OBJECT

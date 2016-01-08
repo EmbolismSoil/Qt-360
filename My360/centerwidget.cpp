@@ -10,6 +10,8 @@
 #include <lowertopwidget.h>
 #include <optimizecenterwidget.h>
 #include <cleancenterwidget.h>
+#include "overloadNew.h"
+
 
 CenterWidget::CenterWidget(QWidget *parent) :
     QWidget(parent)
