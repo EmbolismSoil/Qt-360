@@ -27,7 +27,8 @@ HEADERS += basewidget.h \
     lowerspeedbutton.h \
     lowersafecheckbutton.h \
     common.h \
-    overloadNew.h
+    overloadNew.h \
+    tracer.h
 FORMS +=
 SOURCES += basewidget.cpp \
            bottomwidget.cpp \
@@ -48,7 +49,8 @@ SOURCES += basewidget.cpp \
     cleancenterwidget.cpp \
     lowerspeedbutton.cpp \
     lowersafecheckbutton.cpp \
-    overLoadnew.cpp
+    overLoadnew.cpp \
+    tracer.cpp
 
 RESOURCES += \
     ../resource/img.qrc

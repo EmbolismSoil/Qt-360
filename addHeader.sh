@@ -4,5 +4,6 @@ FILES=$(find ./ -name "*.h")
 
 for file in $FILES
 do 
-    sed '4i\#include "overloadNew.h"' $file
-done    
+    sed '4d' $file > $file.bak
+    mv $file.bak $file
+done

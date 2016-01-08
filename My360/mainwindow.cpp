@@ -7,6 +7,8 @@
 #include <QSignalTransition>
 #include <QEasingCurve>
 #include <QApplication>
+#include <tracer.h>
+#include "overloadNew.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -20,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 MainWindow::~MainWindow()
 {
-
+    Tracer::getTracer().print();
 }
 
 void MainWindow::unFix()

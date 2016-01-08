@@ -10,6 +10,7 @@
 #include <centerwidget.h>
 #include <basewidget.h>
 
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
