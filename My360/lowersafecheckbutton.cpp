@@ -6,6 +6,8 @@
 #include <QDebug>
 #include <QMouseEvent>
 #include <common.h>
+#include "overloadNew.h"
+
 
 lowerSafeCheckButton::lowerSafeCheckButton(QString path,
                                            QString AnimationPath, QWidget *parent):

@@ -2,6 +2,7 @@
 #include <lowertopwidget.h>
 #include <lowerbottomwidget.h>
 #include <lowersafecheckbutton.h>
+#include "overloadNew.h"
 
 SafeCheckCenterWidget::SafeCheckCenterWidget(QWidget *parent):
 AbsLowerCenterWidget(parent)

@@ -4,6 +4,8 @@
 #include <closebutton.h>
 #include <QPaintEvent>
 #include <math.h>
+#include "overloadNew.h"
+
 
 LoginButton::LoginButton(QString FileName, int num , QWidget *parent ):
     Button(FileName, num, parent)

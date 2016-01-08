@@ -5,6 +5,8 @@
 #include <QPalette>
 #include <QLabel>
 #include <lowerspeedbutton.h>
+#include "overloadNew.h"
+
 
 OptimizeCenterWidget::OptimizeCenterWidget(QWidget *parent):
     AbsLowerCenterWidget(parent)

@@ -1,8 +1,11 @@
+
 #include "buttonwithname.h"
 #include <QVBoxLayout>
 #include <QPainter>
 #include <QPaintEvent>
 #include <common.h>
+#include "overloadNew.h"
+
 
 ButtonWithName::ButtonWithName(QString FileName, int xnum, QWidget *parent, int ynum, QString name):
    QWidget(parent),

@@ -2,6 +2,7 @@
 #include <QPixmap>
 #include <QPaintEvent>
 #include <QPainter>
+#include "overloadNew.h"
 
 NunberWidget::NunberWidget(QWidget *parent) :
     QWidget(parent)

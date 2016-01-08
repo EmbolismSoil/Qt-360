@@ -7,6 +7,8 @@
 #include <QSignalTransition>
 #include <QEasingCurve>
 #include <QApplication>
+#include <tracer.h>
+#include "overloadNew.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     center(new CenterWidget),
@@ -37,6 +39,7 @@ MainWindow::~MainWindow()
     //delete moveStart;
     //delete moveEnd  ;
     //delete moveTran;
+    Tracer::getTracer().print();
 }
 
 void MainWindow::unFix()

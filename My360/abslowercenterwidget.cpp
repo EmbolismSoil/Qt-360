@@ -2,6 +2,8 @@
 #include <QVBoxLayout>
 #include <lowerbottomwidget.h>
 #include <lowertopwidget.h>
+#include "overloadNew.h"
+
 
 AbsLowerCenterWidget::AbsLowerCenterWidget(QWidget *parent) :
     QWidget(parent)

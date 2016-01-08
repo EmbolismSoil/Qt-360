@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QTextCodec>
+#include "overloadNew.h"
+#include <stdlib.h>
 #include <tr1/memory>
 
 int main(int argc, char *argv[])
@@ -14,6 +16,5 @@ int main(int argc, char *argv[])
 
     std::tr1::shared_ptr<MainWindow> w(new MainWindow);
     w->show();
-
     return a.exec();
 }

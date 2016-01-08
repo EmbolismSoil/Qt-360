@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QCheckBox>
 #include <QPushButton>
+#include "overloadNew.h"
+
 
 lowerSpeedButton::lowerSpeedButton(QVector<QPixmap> &colorpixmap,
                                    QVector<QPixmap> &graypixmap, QWidget *parent):
