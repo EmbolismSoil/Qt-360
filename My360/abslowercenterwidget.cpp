@@ -15,6 +15,7 @@ AbsLowerCenterWidget::~AbsLowerCenterWidget()
     delete TopWidget;
 }
 
+
 #if 0
 void AbsLowerCenterWidget::init(AbsLowerCenterWidget *LowerCenter)
 {

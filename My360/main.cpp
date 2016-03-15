@@ -12,8 +12,13 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(codec);
     QTextCodec::setCodecForTr(codec);
 
-    std::tr1::shared_ptr<MainWindow> w(new MainWindow);
+    MainWindow* w(MainWindow::getInstance());
     w->show();
+    MainWindow* w1(MainWindow::getInstance());
+    MainWindow* w2(MainWindow::getInstance());
+
+    w1->show();
+    w2->show();
 
     return a.exec();
 }

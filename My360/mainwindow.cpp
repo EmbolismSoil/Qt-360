@@ -8,6 +8,10 @@
 #include <QEasingCurve>
 #include <QApplication>
 
+MainWindow *MainWindow::instance = NULL;
+pthread_once_t MainWindow::initOnce = 0;
+
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     center(new CenterWidget),
     closeOpacityAnimation (new QPropertyAnimation(this, "windowOpacity")),
@@ -16,10 +20,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 {
    setWindowFlags(Qt::FramelessWindowHint);
     setAutoFillBackground(true);
-
+    
     InitUi();
     InitConnect();
     InitAnimation();
+
+    //atexit(&MainWindow::deleteSth);
 }
 
 MainWindow::~MainWindow()
@@ -90,6 +96,7 @@ void MainWindow::InitUi()
     setWindowIcon(QIcon(":/background/360logo.ico"));
     WindowGeometry = geometry();
 }
+
 
 void MainWindow::InitConnect()
 {
