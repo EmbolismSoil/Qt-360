@@ -30,8 +30,8 @@ public:
     static void  deleteSth(void)
     {
           std::cout << "in MainWindow::deleteSth();" << std::endl;
-            if (instance != NULL)
-                delete instance;
+             //if (instance != NULL)
+                //delete instance;
     }
 
 

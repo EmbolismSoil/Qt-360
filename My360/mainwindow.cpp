@@ -7,6 +7,7 @@
 #include <QSignalTransition>
 #include <QEasingCurve>
 #include <QApplication>
+#include <stdlib.h>
 
 MainWindow *MainWindow::instance = NULL;
 pthread_once_t MainWindow::initOnce = 0;
@@ -18,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     closemoveAnimation(new QPropertyAnimation(this, "geometry")),
     Tray(new QSystemTrayIcon(this))
 {
+
+   atexit(&MainWindow::deleteSth);
    setWindowFlags(Qt::FramelessWindowHint);
     setAutoFillBackground(true);
     
